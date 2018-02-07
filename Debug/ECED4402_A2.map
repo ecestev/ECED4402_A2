@@ -1,0 +1,962 @@
+******************************************************************************
+                  TI ARM Linker PC v16.9.4                     
+******************************************************************************
+>> Linked Wed Dec 06 12:51:18 2017
+
+OUTPUT FILE NAME:   <ECED4402_A2.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 000035cd
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  000040f9  000fbf07  R  X
+  SRAM                  20000000   00040000  0001103d  0002efc3  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00004100   00004100    r-x
+  00000000    00000000    00000208   00000208    r-- .intvecs
+  00000208    00000208    00003e24   00003e24    r-x .text
+  0000402c    0000402c    00000029   00000029    r-- .const
+  00004058    00004058    0000000c   0000000c    r-- .init_array
+  00004068    00004068    00000098   00000098    r-- .cinit
+20000000    20000000    00011040   00000000    rw-
+  20000000    20000000    00010000   00000000    rw- .sysmem
+  20010000    20010000    00000a31   00000000    rw- .bss
+  20010a34    20010a34    00000400   00000000    rw- .stack
+  20010e34    20010e34    0000020c   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000208     
+                  00000000    00000208     tm4c1294ncpdt_startup_ccs.obj (.intvecs)
+
+.text      0    00000208    00003e24     
+                  00000208    00000db4     uart.obj (.text)
+                  00000fbc    00000488     process.obj (.text)
+                  00001444    000003d0     queues.obj (.text)
+                  00001814    000003d0     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
+                  00001be4    0000039c                                   : vec_newdel.obj (.text)
+                  00001f80    00000360     main.obj (.text)
+                  000022e0    00000330     KernelCalls.obj (.text)
+                  00002610    000001c4     rtsv7M4_T_le_v4SPD16_eabi.lib : fopen.obj (.text)
+                  000027d4    00000134                                   : fputs.obj (.text)
+                  00002908    00000114     svc.obj (.text)
+                  00002a1c    000000f4     rtsv7M4_T_le_v4SPD16_eabi.lib : dtor_list.obj (.text)
+                  00002b10    000000dc                                   : setvbuf.obj (.text)
+                  00002bec    000000c8     KernelCalls.obj (.text:_ZNSs9_M_appendEPKcS0_)
+                  00002cb4    000000c8     rtsv7M4_T_le_v4SPD16_eabi.lib : fflush.obj (.text)
+                  00002d7c    000000bc                                   : open.obj (.text)
+                  00002e38    000000ac                                   : _io_perm.obj (.text)
+                  00002ee4    0000009c                                   : memcpy_t2.obj (.text)
+                  00002f80    00000098                                   : fclose.obj (.text)
+                  00003018    00000088     systick.obj (.text)
+                  000030a0    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  0000311a    00000002                                   : mpu_init.obj (.text)
+                  0000311c    00000070                                   : autoinit.obj (.text)
+                  0000318c    00000070                                   : getdevice.obj (.text)
+                  000031fc    0000006c                                   : hostrename.obj (.text)
+                  00003268    00000068                                   : copy_decompress_lzss.obj (.text:decompress:lzss)
+                  000032d0    00000068                                   : hostlseek.obj (.text)
+                  00003338    00000068                                   : trgmsg.obj (.text)
+                  000033a0    00000064                                   : fseek.obj (.text)
+                  00003404    00000060                                   : hostopen.obj (.text)
+                  00003464    0000005c     KernelCalls.obj (.text:_ZNSs20_M_compute_next_sizeEj)
+                  000034c0    0000005c     rtsv7M4_T_le_v4SPD16_eabi.lib : close.obj (.text)
+                  0000351c    00000058                                   : hostread.obj (.text)
+                  00003574    00000058                                   : hostwrite.obj (.text)
+                  000035cc    00000054                                   : boot.obj (.text)
+                  00003620    00000054                                   : exit.obj (.text)
+                  00003674    0000004c     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEE17_M_allocate_blockEj)
+                  000036c0    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  0000370c    00000048     KernelCalls.obj (.text:_ZNSaIcE11_M_allocateEjRj)
+                  00003754    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : dll_main.obj (.text)
+                  0000379c    00000046     KernelCalls.obj (.text:_ZNSt4priv7__ucopyIPKcPciEET0_T_S5_S4_RKSt26random_access_iterator_tagPT1_)
+                  000037e2    00000046     KernelCalls.obj (.text:_ZNSt4priv7__ucopyIPcS1_iEET0_T_S3_S2_RKSt26random_access_iterator_tagPT1_)
+                  00003828    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : hostclose.obj (.text)
+                  0000386c    00000044                                   : hostunlink.obj (.text)
+                  000038b0    0000003e     uart.obj (.text:_ZN10uartformatD1Ev)
+                  000038ee    0000003c     KernelCalls.obj (.text:_ZNSs19_M_range_initializeEPKcS0_)
+                  0000392a    0000003a     KernelCalls.obj (.text:_ZNSsC1ERKSs)
+                  00003964    00000036     rtsv7M4_T_le_v4SPD16_eabi.lib : strncpy.obj (.text)
+                  0000399a    00000002                                   : newhandler.obj (.text)
+                  0000399c    00000030                                   : new_.obj (.text)
+                  000039cc    0000002c     KernelCalls.obj (.text:_ZNSt4priv15__ucopy_trivialEPKvS1_Pv)
+                  000039f8    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : unlink.obj (.text)
+                  00003a24    0000002a     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEE19_M_deallocate_blockEv)
+                  00003a4e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : startup.obj (.text)
+                  00003a50    00000028                                   : lseek.obj (.text)
+                  00003a78    00000028                                   : write.obj (.text)
+                  00003aa0    00000026     KernelCalls.obj (.text:_ZNKSt4priv12_String_baseIcSaIcEE7_M_restEv)
+                  00003ac6    00000026     uart.obj (.text:_ZNSs2atEj)
+                  00003aec    00000026     main.obj (.text:_ZNSsC1EPKcRKSaIcE)
+                  00003b12    00000026     uart.obj (.text:_ZNSt4priv12_String_baseIcSaIcEEC1ERKS1_j)
+                  00003b38    00000022     KernelCalls.obj (.text:_ZNKSt4priv12_String_baseIcSaIcEE8max_sizeEv)
+                  00003b5a    00000022     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEE8_M_resetEPcS3_S3_)
+                  00003b7c    00000020     process.obj (.text:_ZNSs6appendERKSs)
+                  00003b9c    00000020     KernelCalls.obj (.text:_ZNSt4priv7__ucopyIPKcPcEET0_T_S5_S4_)
+                  00003bbc    00000020     KernelCalls.obj (.text:_ZNSt4priv7__ucopyIPcS1_EET0_T_S3_S2_)
+                  00003bdc    00000020     KernelCalls.obj (.text:_ZSt16_Param_ConstructIccEvPT_RKT0_)
+                  00003bfc    00000020     rtsv7M4_T_le_v4SPD16_eabi.lib : memchr.obj (.text)
+                  00003c1c    0000001e     KernelCalls.obj (.text:_ZSt3maxIjERKT_S2_S2_)
+                  00003c3a    0000001e     KernelCalls.obj (.text:_ZSt3minIjERKT_S2_S2_)
+                  00003c58    0000001c     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEEC1ERKS1_)
+                  00003c74    0000001c     KernelCalls.obj (.text:_ZNSt4priv17_STLP_alloc_proxyIPccSaIcEE8allocateEjRj)
+                  00003c90    0000001c     KernelCalls.obj (.text:_ZNSt4priv17_STLP_alloc_proxyIPccSaIcEE8allocateEjRjRKSt11__true_type)
+                  00003cac    0000001c     KernelCalls.obj (.text:_ZSt10_ConstructIcEvPT_)
+                  00003cc8    0000001a     KernelCalls.obj (.text:_ZNSs6appendEPKc)
+                  00003ce2    0000001a     uart.obj (.text:_ZNSsC1ERKSaIcE)
+                  00003cfc    0000001a     KernelCalls.obj (.text:_ZNSt4priv17_STLP_alloc_proxyIPccSaIcEEC1ERKS2_S1_)
+                  00003d16    00000018     KernelCalls.obj (.text:_ZNKSt4priv12_String_baseIcSaIcEE19_M_using_static_bufEv)
+                  00003d2e    00000002     --HOLE-- [fill = 0]
+                  00003d30    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00003d48    00000018                                   : strcmp.obj (.text)
+                  00003d60    00000016     KernelCalls.obj (.text:_ZNKSs4sizeEv)
+                  00003d76    00000016     KernelCalls.obj (.text:_ZNSaIcE10deallocateEPcj)
+                  00003d8c    00000016     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEED1Ev)
+                  00003da2    00000016     KernelCalls.obj (.text:_ZSt20_Param_Construct_auxIccEvPT_RKT0_RKSt11__true_type)
+                  00003db8    00000016     rtsv7M4_T_le_v4SPD16_eabi.lib : strchr.obj (.text)
+                  00003dce    00000014     KernelCalls.obj (.text:_ZNSs19_M_terminate_stringEv)
+                  00003de2    00000014     KernelCalls.obj (.text:_ZNSt11char_traitsIcE6assignERcRKc)
+                  00003df6    00000014     uart.obj (.text:_ZNSt4priv12_String_baseIcSaIcEEC2ERKS1_j)
+                  00003e0a    00000014     KernelCalls.obj (.text:_ZSt18uninitialized_copyPKcS0_Pc)
+                  00003e1e    00000002     --HOLE-- [fill = 0]
+                  00003e20    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00003e34    00000014                                   : strcpy.obj (.text)
+                  00003e48    00000014                                   : strlen.obj (.text)
+                  00003e5c    00000012     KernelCalls.obj (.text:_ZNKSs13get_allocatorEv)
+                  00003e6e    00000012     KernelCalls.obj (.text:_ZSt14_Construct_auxIcEvPT_RKSt11__true_type)
+                  00003e80    00000010     KernelCalls.obj (.text:_ZNKSt4priv12_String_baseIcSaIcEE21_M_throw_length_errorEv)
+                  00003e90    00000010     uart.obj (.text:_ZNKSt4priv12_String_baseIcSaIcEE21_M_throw_out_of_rangeEv)
+                  00003ea0    00000010     KernelCalls.obj (.text:_ZNSaIcEC2ERKS_)
+                  00003eb0    00000010     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEEC2ERKS1_)
+                  00003ec0    00000010     kernel.obj (.text)
+                  00003ed0    0000000e     KernelCalls.obj (.text:_ZNKSaIcE8max_sizeEv)
+                  00003ede    0000000e     KernelCalls.obj (.text:_ZNKSs17_M_construct_nullEPc)
+                  00003eec    0000000e     KernelCalls.obj (.text:_ZNKSt4priv12_String_baseIcSaIcEE8_M_StartEv)
+                  00003efa    0000000e     KernelCalls.obj (.text:_ZNKSt4priv12_String_baseIcSaIcEE9_M_FinishEv)
+                  00003f08    0000000e     KernelCalls.obj (.text:_ZNSaIcEC1ERKS_)
+                  00003f16    0000000e     KernelCalls.obj (.text:_ZNSsD1Ev)
+                  00003f24    0000000e     KernelCalls.obj (.text:_ZNSt11__new_alloc10deallocateEPvj)
+                  00003f32    0000000e     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEE8_M_StartEv)
+                  00003f40    0000000e     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEE9_M_FinishEv)
+                  00003f4e    0000000e     KernelCalls.obj (.text:_ZNSt4priv17_STLP_alloc_proxyIPccSaIcEED1Ev)
+                  00003f5c    0000000e     KernelCalls.obj (.text:_ZSt7_Is_PODIcESt6_IsPODIT_EPS1_)
+                  00003f6a    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  00003f78    0000000c     uart.obj (.text:_ZNKSs6lengthEv)
+                  00003f84    0000000c     KernelCalls.obj (.text:_ZNKSs8max_sizeEv)
+                  00003f90    0000000c     main.obj (.text:_ZNSaIcEC1Ev)
+                  00003f9c    0000000c     KernelCalls.obj (.text:_ZNSaIcED1Ev)
+                  00003fa8    0000000c     KernelCalls.obj (.text:_ZNSaIcED2Ev)
+                  00003fb4    0000000c     KernelCalls.obj (.text:_ZNSs3endEv)
+                  00003fc0    0000000c     KernelCalls.obj (.text:_ZNSt11__new_alloc8allocateEj)
+                  00003fcc    0000000c     KernelCalls.obj (.text:_ZNSt11char_traitsIcE6lengthEPKc)
+                  00003fd8    0000000c     KernelCalls.obj (.text:_ZNSt4priv12_String_baseIcSaIcEED2Ev)
+                  00003fe4    0000000c     KernelCalls.obj (.text:_ZNSt6_IsPODIcE7_AnswerEv)
+                  00003ff0    0000000c     KernelCalls.obj (.text:_ZSt12__stl_deletePv)
+                  00003ffc    0000000c     KernelCalls.obj (.text:_ZSt9__stl_newj)
+                  00004008    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00004014    0000000c     tm4c1294ncpdt_startup_ccs.obj (.text)
+                  00004020    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : delete.obj (.text)
+                  00004028    00000004                                   : pre_init.obj (.text)
+
+.const     0    0000402c    00000029     
+                  0000402c    0000000f     KernelCalls.obj (.const:.string:_ZZNSaIcE11_M_allocateEjRjEs)
+                  0000403b    0000000d     KernelCalls.obj (.const:.string:_ZZNKSt4priv12_String_baseIcSaIcEE21_M_throw_length_errorEvEs)
+                  00004048    0000000d     uart.obj (.const:.string:_ZZNKSt4priv12_String_baseIcSaIcEE21_M_throw_out_of_rangeEvEs)
+
+.init_array 
+*          0    00004058    0000000c     
+                  00004058    00000004     main.obj (.init_array)
+                  0000405c    00000004     process.obj (.init_array)
+                  00004060    00000004     uart.obj (.init_array)
+
+.cinit     0    00004068    00000098     
+                  00004068    00000071     (.cinit..data.load) [load image, compression = lzss]
+                  000040d9    00000003     --HOLE-- [fill = 0]
+                  000040dc    0000000c     (__TI_handler_table)
+                  000040e8    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000040f0    00000010     (__TI_cinit_table)
+
+.sysmem    0    20000000    00010000     UNINITIALIZED
+                  20000000    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.sysmem)
+                  20000008    0000fff8     --HOLE--
+
+.bss       0    20010000    00000a31     UNINITIALIZED
+                  20010000    00000738     uart.obj (.bss:FormatTable)
+                  20010738    00000120     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.obj (.bss:_CIOBUF_)
+                  20010858    000000a0     (.common:__TI_tmpnams)
+                  200108f8    00000080     main.obj (.bss:msgqueue)
+                  20010978    00000078     process.obj (.bss:priorities)
+                  200109f0    00000018     main.obj (.bss:procqueue)
+                  20010a08    00000014     main.obj (.bss:UART0_TX_BUFFER)
+                  20010a1c    00000008     (.common:parmbuf)
+                  20010a24    00000004     (.common:GotData)
+                  20010a28    00000004     (.common:__dso_handle)
+                  20010a2c    00000004     (.common:running)
+                  20010a30    00000001     (.common:Data)
+
+.stack     0    20010a34    00000400     UNINITIALIZED
+                  20010a34    00000400     --HOLE--
+
+.data      0    20010e34    0000020c     UNINITIALIZED
+                  20010e34    000000f0     rtsv7M4_T_le_v4SPD16_eabi.lib : defs.obj (.data:_ftable)
+                  20010f24    00000078                                   : write.obj (.data:_device)
+                  20010f9c    00000050                                   : write.obj (.data:_stream)
+                  20010fec    00000010                                   : defs.obj (.data)
+                  20010ffc    0000000d     main.obj (.data)
+                  20011009    00000003     --HOLE--
+                  2001100c    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
+                  20011018    0000000c                                   : memory.obj (.data:$O1$$)
+                  20011024    00000008                                   : _lock.obj (.data:$O1$$)
+                  2001102c    00000004                                   : dtor_list.obj (.data)
+                  20011030    00000004                                   : fopen.obj (.data)
+                  20011034    00000004                                   : open.obj (.data)
+                  20011038    00000004                                   : stkdepth_vars.obj (.data)
+                  2001103c    00000004                                   : vars.obj (.data)
+
+MODULE SUMMARY
+
+       Module                          code    ro data   rw data
+       ------                          ----    -------   -------
+    .\
+       uart.obj                        3720    17        1848   
+       KernelCalls.obj                 2556    28        5      
+       process.obj                     1192    4         120    
+       main.obj                        914     4         189    
+       queues.obj                      976     0         0      
+       tm4c1294ncpdt_startup_ccs.obj   12      520       0      
+       svc.obj                         276     0         0      
+       systick.obj                     136     0         0      
+       kernel.obj                      16      0         0      
+    +--+-------------------------------+-------+---------+---------+
+       Total:                          9798    573       2162   
+                                                                
+    C:\ti\ccsv7\tools\compiler\ti-cgt-arm_16.9.4.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memory.obj                      976     0         12     
+       vec_newdel.obj                  924     0         0      
+       fopen.obj                       452     0         4      
+       defs.obj                        0       0         416    
+       trgmsg.obj                      104     0         288    
+       fputs.obj                       308     0         0      
+       dtor_list.obj                   244     0         8      
+       write.obj                       40      0         200    
+       setvbuf.obj                     220     0         0      
+       fflush.obj                      200     0         0      
+       open.obj                        188     0         4      
+       _io_perm.obj                    172     0         0      
+       memcpy_t2.obj                   156     0         0      
+       fclose.obj                      152     0         0      
+       memset_t2.obj                   122     0         0      
+       autoinit.obj                    112     0         0      
+       getdevice.obj                   112     0         0      
+       hostrename.obj                  108     0         0      
+       copy_decompress_lzss.obj        104     0         0      
+       hostlseek.obj                   104     0         0      
+       hostopen.obj                    96      0         8      
+       fseek.obj                       100     0         0      
+       exit.obj                        84      0         12     
+       close.obj                       92      0         0      
+       hostread.obj                    88      0         0      
+       hostwrite.obj                   88      0         0      
+       boot.obj                        84      0         0      
+       cpy_tbl.obj                     76      0         0      
+       dll_main.obj                    72      0         0      
+       hostclose.obj                   68      0         0      
+       hostunlink.obj                  68      0         0      
+       strncpy.obj                     54      0         0      
+       new_.obj                        48      0         0      
+       unlink.obj                      44      0         0      
+       lseek.obj                       40      0         0      
+       memchr.obj                      32      0         0      
+       _lock.obj                       20      0         8      
+       args_main.obj                   24      0         0      
+       strcmp.obj                      24      0         0      
+       strchr.obj                      22      0         0      
+       strcpy.obj                      20      0         0      
+       strlen.obj                      20      0         0      
+       copy_decompress_none.obj        14      0         0      
+       copy_zero_init.obj              12      0         0      
+       delete.obj                      8       0         0      
+       pre_init.obj                    4       0         0      
+       stkdepth_vars.obj               0       0         4      
+       vars.obj                        0       0         4      
+       mpu_init.obj                    2       0         0      
+       newhandler.obj                  2       0         0      
+       startup.obj                     2       0         0      
+    +--+-------------------------------+-------+---------+---------+
+       Total:                          6106    0         968    
+                                                                
+       Heap:                           0       0         65536  
+       Stack:                          0       0         1024   
+       Linker Generated:               0       149       0      
+    +--+-------------------------------+-------+---------+---------+
+       Grand Total:                    15904   722       69690  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000040f0 records: 2, size/record: 8, table size: 16
+	.data: load addr=00004068, load size=00000071 bytes, run addr=20010e34, run size=0000020c bytes, compression=lzss
+	.bss: load addr=000040e8, load size=00000008 bytes, run addr=20010000, run size=00000a31 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 000040dc records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                                                      
+-------   ----                                                                      
+00003621  C$$EXIT                                                                   
+00003367  C$$IO$$                                                                   
+20010a30  Data                                                                      
+20010000  FormatTable                                                               
+20010a24  GotData                                                                   
+00003829  HOSTclose                                                                 
+000032d1  HOSTlseek                                                                 
+00003405  HOSTopen                                                                  
+0000351d  HOSTread                                                                  
+000031fd  HOSTrename                                                                
+0000386d  HOSTunlink                                                                
+00003575  HOSTwrite                                                                 
+00002a01  PendSVHandler                                                             
+00004015  ResetISR                                                                  
+00004058  SHT$$INIT_ARRAY$$Base                                                     
+00004064  SHT$$INIT_ARRAY$$Limit                                                    
+00002943  SVCHandler                                                                
+00002909  SVCall                                                                    
+0000305b  SysTickHandler                                                            
+000002a3  UART0_IntHandler                                                          
+20010a08  UART0_TX_BUFFER                                                           
+00003ec1  _Z10KernelInitv                                                           
+00000209  _Z10UART0_Initv                                                           
+00003025  _Z11SysTickStopv                                                          
+00002419  _Z12KSendMessagejPvj                                                      
+000012f1  _Z12PSendMessagejPvj                                                      
+00003019  _Z12SysTickStartv                                                         
+00000305  _Z12UART0_printfSs                                                        
+000012a1  _Z12idle_processv                                                         
+0000101d  _Z12next_processv                                                         
+00003031  _Z13SysTickPeriodm                                                        
+000029f5  _Z13TriggerPendSVv                                                        
+0000118f  _Z14dummy_process1v                                                       
+000011c3  _Z14dummy_process2v                                                       
+000011dd  _Z14dummy_process3v                                                       
+000011f5  _Z14dummy_process4v                                                       
+0000120d  _Z14dummy_process5v                                                       
+00001225  _Z14dummy_process6v                                                       
+0000123d  _Z14dummy_process7v                                                       
+00001255  _Z14dummy_process8v                                                       
+0000126d  _Z14dummy_process9v                                                       
+00000fed  _Z14save_registersv                                                       
+00000267  _Z15InterruptEnablem                                                      
+000024c7  _Z15KReceiveMessagejPvj                                                   
+00001315  _Z15PReceiveMessagejPvj                                                   
+0000028f  _Z15UART0_IntEnablem                                                      
+00003043  _Z16SysTickIntEnablev                                                     
+000022e1  _Z17KTerminateProcessv                                                    
+000012c3  _Z17PTerminateProcessv                                                    
+0000304f  _Z17SysTickIntDisablev                                                    
+00000ffb  _Z17restore_registersv                                                    
+0000399b  _Z21__default_new_handlerv                                                
+000023bf  _Z5KBindj                                                                 
+000012db  _Z5PBindj                                                                 
+0000306b  _Z6_Delayj                                                                
+00001009  _Z6get_SPv                                                                
+000012a3  _Z6pkCalljPv                                                              
+000023b7  _Z7KGetPIDv                                                               
+000012cf  _Z7PGetPIDv                                                               
+00000fc7  _Z7get_MSPv                                                               
+00000fbd  _Z7get_PSPv                                                               
+00000fdf  _Z7set_MSPm                                                               
+00000fd1  _Z7set_PSPm                                                               
+00001011  _Z8assignR7m                                                              
+00001067  _Z8reg_procPFvvEjj                                                        
+000038b1  _ZN10uartformatD1Ev                                                       
+000015b3  _ZN12msgcontainerC1Ev                                                     
+000015b3  _ZN12msgcontainerC2Ev                                                     
+000015d7  _ZN12msgcontainerD1Ev                                                     
+000015d7  _ZN12msgcontainerD2Ev                                                     
+00001445  _ZN3pcbC1Ev                                                               
+00001445  _ZN3pcbC2Ev                                                               
+00001475  _ZN3pcbD1Ev                                                               
+00001475  _ZN3pcbD2Ev                                                               
+000016d7  _ZN7m_queue5clearEv                                                       
+00001665  _ZN7m_queue6removeEP12msgcontainer                                        
+00001607  _ZN7m_queue7enqueueEP12msgcontainer                                       
+00001657  _ZN7m_queue9get_frontEv                                                   
+000015e3  _ZN7m_queueC1Ev                                                           
+000015e3  _ZN7m_queueC2Ev                                                           
+000015fb  _ZN7m_queueD1Ev                                                           
+000015fb  _ZN7m_queueD2Ev                                                           
+00001541  _ZN7p_queue6removeEP3pcb                                                  
+000014ef  _ZN7p_queue7dequeueEP3pcb                                                 
+0000149f  _ZN7p_queue7enqueueEP3pcb                                                 
+00001533  _ZN7p_queue9get_frontEv                                                   
+00001481  _ZN7p_queueC1Ev                                                           
+00001481  _ZN7p_queueC2Ev                                                           
+00001493  _ZN7p_queueD1Ev                                                           
+00001493  _ZN7p_queueD2Ev                                                           
+000017c1  _ZN7u_queue7dequeueEv                                                     
+00001775  _ZN7u_queue7enqueueEc                                                     
+00001739  _ZN7u_queueC1Ei                                                           
+00001739  _ZN7u_queueC2Ei                                                           
+00001765  _ZN7u_queueD1Ev                                                           
+00001765  _ZN7u_queueD2Ev                                                           
+000016c3  _ZNK7m_queue5emptyEv                                                      
+0000159f  _ZNK7p_queue5emptyEv                                                      
+00001801  _ZNK7u_queue5emptyEv                                                      
+00003ed1  _ZNKSaIcE8max_sizeEv                                                      
+00003e5d  _ZNKSs13get_allocatorEv                                                   
+00003edf  _ZNKSs17_M_construct_nullEPc                                              
+00003d61  _ZNKSs4sizeEv                                                             
+00003f79  _ZNKSs6lengthEv                                                           
+00003f85  _ZNKSs8max_sizeEv                                                         
+00003d17  _ZNKSt4priv12_String_baseIcSaIcEE19_M_using_static_bufEv                  
+00003e81  _ZNKSt4priv12_String_baseIcSaIcEE21_M_throw_length_errorEv                
+00003e91  _ZNKSt4priv12_String_baseIcSaIcEE21_M_throw_out_of_rangeEv                
+00003aa1  _ZNKSt4priv12_String_baseIcSaIcEE7_M_restEv                               
+00003eed  _ZNKSt4priv12_String_baseIcSaIcEE8_M_StartEv                              
+00003b39  _ZNKSt4priv12_String_baseIcSaIcEE8max_sizeEv                              
+00003efb  _ZNKSt4priv12_String_baseIcSaIcEE9_M_FinishEv                             
+00003d77  _ZNSaIcE10deallocateEPcj                                                  
+0000370d  _ZNSaIcE11_M_allocateEjRj                                                 
+00003f09  _ZNSaIcEC1ERKS_                                                           
+00003f91  _ZNSaIcEC1Ev                                                              
+00003ea1  _ZNSaIcEC2ERKS_                                                           
+00003f9d  _ZNSaIcED1Ev                                                              
+00003fa9  _ZNSaIcED2Ev                                                              
+000038ef  _ZNSs19_M_range_initializeEPKcS0_                                         
+00003dcf  _ZNSs19_M_terminate_stringEv                                              
+00003465  _ZNSs20_M_compute_next_sizeEj                                             
+00003ac7  _ZNSs2atEj                                                                
+00003fb5  _ZNSs3endEv                                                               
+00003cc9  _ZNSs6appendEPKc                                                          
+00003b7d  _ZNSs6appendERKSs                                                         
+00002bed  _ZNSs9_M_appendEPKcS0_                                                    
+00003aed  _ZNSsC1EPKcRKSaIcE                                                        
+00003ce3  _ZNSsC1ERKSaIcE                                                           
+0000392b  _ZNSsC1ERKSs                                                              
+00003f17  _ZNSsD1Ev                                                                 
+00003f25  _ZNSt11__new_alloc10deallocateEPvj                                        
+00003fc1  _ZNSt11__new_alloc8allocateEj                                             
+00003de3  _ZNSt11char_traitsIcE6assignERcRKc                                        
+00003fcd  _ZNSt11char_traitsIcE6lengthEPKc                                          
+00003675  _ZNSt4priv12_String_baseIcSaIcEE17_M_allocate_blockEj                     
+00003a25  _ZNSt4priv12_String_baseIcSaIcEE19_M_deallocate_blockEv                   
+00003f33  _ZNSt4priv12_String_baseIcSaIcEE8_M_StartEv                               
+00003b5b  _ZNSt4priv12_String_baseIcSaIcEE8_M_resetEPcS3_S3_                        
+00003f41  _ZNSt4priv12_String_baseIcSaIcEE9_M_FinishEv                              
+00003c59  _ZNSt4priv12_String_baseIcSaIcEEC1ERKS1_                                  
+00003b13  _ZNSt4priv12_String_baseIcSaIcEEC1ERKS1_j                                 
+00003eb1  _ZNSt4priv12_String_baseIcSaIcEEC2ERKS1_                                  
+00003df7  _ZNSt4priv12_String_baseIcSaIcEEC2ERKS1_j                                 
+00003d8d  _ZNSt4priv12_String_baseIcSaIcEED1Ev                                      
+00003fd9  _ZNSt4priv12_String_baseIcSaIcEED2Ev                                      
+000039cd  _ZNSt4priv15__ucopy_trivialEPKvS1_Pv                                      
+00003c75  _ZNSt4priv17_STLP_alloc_proxyIPccSaIcEE8allocateEjRj                      
+00003c91  _ZNSt4priv17_STLP_alloc_proxyIPccSaIcEE8allocateEjRjRKSt11__true_type     
+00003cfd  _ZNSt4priv17_STLP_alloc_proxyIPccSaIcEEC1ERKS2_S1_                        
+00003f4f  _ZNSt4priv17_STLP_alloc_proxyIPccSaIcEED1Ev                               
+00003b9d  _ZNSt4priv7__ucopyIPKcPcEET0_T_S5_S4_                                     
+0000379d  _ZNSt4priv7__ucopyIPKcPciEET0_T_S5_S4_RKSt26random_access_iterator_tagPT1_
+00003bbd  _ZNSt4priv7__ucopyIPcS1_EET0_T_S3_S2_                                     
+000037e3  _ZNSt4priv7__ucopyIPcS1_iEET0_T_S3_S2_RKSt26random_access_iterator_tagPT1_
+00003fe5  _ZNSt6_IsPODIcE7_AnswerEv                                                 
+00003cad  _ZSt10_ConstructIcEvPT_                                                   
+00003ff1  _ZSt12__stl_deletePv                                                      
+00003e6f  _ZSt14_Construct_auxIcEvPT_RKSt11__true_type                              
+00003bdd  _ZSt16_Param_ConstructIccEvPT_RKT0_                                       
+00003e0b  _ZSt18uninitialized_copyPKcS0_Pc                                          
+00003da3  _ZSt20_Param_Construct_auxIccEvPT_RKT0_RKSt11__true_type                  
+00003791  _ZSt23__stl_throw_range_errorPKc                                          
+00003785  _ZSt24__stl_throw_length_errorPKc                                         
+00003779  _ZSt24__stl_throw_out_of_rangePKc                                         
+0000376d  _ZSt25__stl_throw_runtime_errorPKc                                        
+00003761  _ZSt26__stl_throw_overflow_errorPKc                                       
+00003755  _ZSt28__stl_throw_invalid_argumentPKc                                     
+00003c1d  _ZSt3maxIjERKT_S2_S2_                                                     
+00003c3b  _ZSt3minIjERKT_S2_S2_                                                     
+00003f5d  _ZSt7_Is_PODIcESt6_IsPODIT_EPS1_                                          
+00003ffd  _ZSt9__stl_newj                                                           
+0000403b  _ZZNKSt4priv12_String_baseIcSaIcEE21_M_throw_length_errorEvEs             
+00004048  _ZZNKSt4priv12_String_baseIcSaIcEE21_M_throw_out_of_rangeEvEs             
+0000402c  _ZZNSaIcE11_M_allocateEjRjEs                                              
+00004021  _ZdaPv                                                                    
+00004021  _ZdlPv                                                                    
+0000399d  _Znaj                                                                     
+0000399d  _Znwj                                                                     
+20010738  __CIOBUF_                                                                 
+20010e34  __STACK_END                                                               
+00000400  __STACK_SIZE                                                              
+20010c34  __STACK_TOP                                                               
+00010000  __SYSMEM_SIZE                                                             
+000040f0  __TI_CINIT_Base                                                           
+00004100  __TI_CINIT_Limit                                                          
+000040dc  __TI_Handler_Table_Base                                                   
+000040e8  __TI_Handler_Table_Limit                                                  
+0000311d  __TI_auto_init                                                            
+000026d9  __TI_cleanup                                                              
+2001100c  __TI_cleanup_ptr                                                          
+00002f81  __TI_closefile                                                            
+00003269  __TI_decompress_lzss                                                      
+00003f6b  __TI_decompress_none                                                      
+00002cb5  __TI_doflush                                                              
+20011010  __TI_dtors_ptr                                                            
+20011014  __TI_enable_exit_profile_output                                           
+20010fec  __TI_ft_end                                                               
+ffffffff  __TI_pprof_out_hndl                                                       
+ffffffff  __TI_prof_data_size                                                       
+ffffffff  __TI_prof_data_start                                                      
+00002e9b  __TI_rd_ok                                                                
+0000336b  __TI_readmsg                                                              
+00000000  __TI_static_base__                                                        
+20010858  __TI_tmpnams                                                              
+00003339  __TI_writemsg                                                             
+00002e39  __TI_wrt_ok                                                               
+00004009  __TI_zero_init                                                            
+00002ab7  __aeabi_atexit                                                            
+000030a1  __aeabi_memclr                                                            
+000030a1  __aeabi_memclr4                                                           
+000030a1  __aeabi_memclr8                                                           
+00002ee5  __aeabi_memcpy                                                            
+00002ee5  __aeabi_memcpy4                                                           
+00002ee5  __aeabi_memcpy8                                                           
+000030a3  __aeabi_memset                                                            
+000030a3  __aeabi_memset4                                                           
+000030a3  __aeabi_memset8                                                           
+20010ff8  __aeabi_stderr                                                            
+20010ff0  __aeabi_stdin                                                             
+20010ff4  __aeabi_stdout                                                            
+00001f5b  __aeabi_vec_cctor_nocookie_nodtor                                         
+00001f37  __aeabi_vec_ctor_cookie_nodtor                                            
+00001f25  __aeabi_vec_ctor_nocookie_nodtor                                          
+00001f19  __aeabi_vec_delete                                                        
+00001efd  __aeabi_vec_delete3                                                       
+00001ee3  __aeabi_vec_delete3_nodtor                                                
+00001eb1  __aeabi_vec_dtor                                                          
+00001ec5  __aeabi_vec_dtor_cookie                                                   
+00001e9d  __aeabi_vec_new_cookie                                                    
+00001e81  __aeabi_vec_new_cookie_noctor                                             
+00001e5b  __aeabi_vec_new_cookie_nodtor                                             
+00001e47  __aeabi_vec_new_nocookie                                                  
+ffffffff  __binit__                                                                 
+ffffffff  __c_args__                                                                
+00002a65  __cxa_atexit                                                              
+00002a1d  __cxa_finalize                                                            
+00002a5f  __cxa_ia64_exit                                                           
+00001e1d  __cxa_vec_cctor                                                           
+00001dfd  __cxa_vec_cleanup                                                         
+00001dd9  __cxa_vec_ctor                                                            
+00001db3  __cxa_vec_delete                                                          
+00001d8d  __cxa_vec_delete2                                                         
+00001d67  __cxa_vec_delete3                                                         
+00001d4b  __cxa_vec_dtor                                                            
+00001caf  __cxa_vec_new                                                             
+00001c83  __cxa_vec_new2                                                            
+00001c57  __cxa_vec_new3                                                            
+20010a28  __dso_handle                                                              
+0000311b  __mpu_init                                                                
+20010a34  __stack                                                                   
+0000133d  __sti___11_process_cpp_d9d940d7                                           
+00002077  __sti___8_main_cpp_8c25cdc9                                               
+00000389  __sti___8_uart_cpp_ac953c5d                                               
+00003d31  _args_main                                                                
+000035cd  _c_int00                                                                  
+20010f24  _device                                                                   
+20010e34  _ftable                                                                   
+20011024  _lock                                                                     
+2001103c  _new_handler                                                              
+00003e2f  _nop                                                                      
+00003e27  _register_lock                                                            
+00003e21  _register_unlock                                                          
+20010f9c  _stream                                                                   
+20000000  _sys_memory                                                               
+00003a4f  _system_post_cinit                                                        
+00004029  _system_pre_init                                                          
+20011028  _unlock                                                                   
+00003625  abort                                                                     
+00002aa9  atexit                                                                    
+ffffffff  binit                                                                     
+00001bb5  calloc                                                                    
+000034c1  close                                                                     
+000036c1  copy_in                                                                   
+0000362d  exit                                                                      
+00002fe7  fclose                                                                    
+00002d01  fflush                                                                    
+0000318d  finddevice                                                                
+0000272f  fopen                                                                     
+20011008  force_psp                                                                 
+000027d5  fputs                                                                     
+000018ff  free                                                                      
+00002705  freopen                                                                   
+000033a1  fseek                                                                     
+00000000  g_pfnVectors                                                              
+000031b7  getdevice                                                                 
+20010ffc  highest_p                                                                 
+00003a51  lseek                                                                     
+00001f81  main                                                                      
+20011038  main_func_sp                                                              
+00001895  malloc                                                                    
+00001ac9  memalign                                                                  
+00003bfd  memchr                                                                    
+00002ee5  memcpy                                                                    
+000030a9  memset                                                                    
+00001815  minit                                                                     
+200108f8  msgqueue                                                                  
+20011000  next_pid                                                                  
+00002d7d  open                                                                      
+20010a1c  parmbuf                                                                   
+20010978  priorities                                                                
+200109f0  procqueue                                                                 
+000028e1  puts                                                                      
+000019c1  realloc                                                                   
+000039f9  remove                                                                    
+20010a2c  running                                                                   
+00002b11  setvbuf                                                                   
+00003db9  strchr                                                                    
+00003d49  strcmp                                                                    
+00003e35  strcpy                                                                    
+00003e49  strlen                                                                    
+00003965  strncpy                                                                   
+20011004  ticks                                                                     
+000039f9  unlink                                                                    
+00003a79  write                                                                     
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                                                      
+-------   ----                                                                      
+00000000  __TI_static_base__                                                        
+00000000  g_pfnVectors                                                              
+00000209  _Z10UART0_Initv                                                           
+00000267  _Z15InterruptEnablem                                                      
+0000028f  _Z15UART0_IntEnablem                                                      
+000002a3  UART0_IntHandler                                                          
+00000305  _Z12UART0_printfSs                                                        
+00000389  __sti___8_uart_cpp_ac953c5d                                               
+00000400  __STACK_SIZE                                                              
+00000fbd  _Z7get_PSPv                                                               
+00000fc7  _Z7get_MSPv                                                               
+00000fd1  _Z7set_PSPm                                                               
+00000fdf  _Z7set_MSPm                                                               
+00000fed  _Z14save_registersv                                                       
+00000ffb  _Z17restore_registersv                                                    
+00001009  _Z6get_SPv                                                                
+00001011  _Z8assignR7m                                                              
+0000101d  _Z12next_processv                                                         
+00001067  _Z8reg_procPFvvEjj                                                        
+0000118f  _Z14dummy_process1v                                                       
+000011c3  _Z14dummy_process2v                                                       
+000011dd  _Z14dummy_process3v                                                       
+000011f5  _Z14dummy_process4v                                                       
+0000120d  _Z14dummy_process5v                                                       
+00001225  _Z14dummy_process6v                                                       
+0000123d  _Z14dummy_process7v                                                       
+00001255  _Z14dummy_process8v                                                       
+0000126d  _Z14dummy_process9v                                                       
+000012a1  _Z12idle_processv                                                         
+000012a3  _Z6pkCalljPv                                                              
+000012c3  _Z17PTerminateProcessv                                                    
+000012cf  _Z7PGetPIDv                                                               
+000012db  _Z5PBindj                                                                 
+000012f1  _Z12PSendMessagejPvj                                                      
+00001315  _Z15PReceiveMessagejPvj                                                   
+0000133d  __sti___11_process_cpp_d9d940d7                                           
+00001445  _ZN3pcbC1Ev                                                               
+00001445  _ZN3pcbC2Ev                                                               
+00001475  _ZN3pcbD1Ev                                                               
+00001475  _ZN3pcbD2Ev                                                               
+00001481  _ZN7p_queueC1Ev                                                           
+00001481  _ZN7p_queueC2Ev                                                           
+00001493  _ZN7p_queueD1Ev                                                           
+00001493  _ZN7p_queueD2Ev                                                           
+0000149f  _ZN7p_queue7enqueueEP3pcb                                                 
+000014ef  _ZN7p_queue7dequeueEP3pcb                                                 
+00001533  _ZN7p_queue9get_frontEv                                                   
+00001541  _ZN7p_queue6removeEP3pcb                                                  
+0000159f  _ZNK7p_queue5emptyEv                                                      
+000015b3  _ZN12msgcontainerC1Ev                                                     
+000015b3  _ZN12msgcontainerC2Ev                                                     
+000015d7  _ZN12msgcontainerD1Ev                                                     
+000015d7  _ZN12msgcontainerD2Ev                                                     
+000015e3  _ZN7m_queueC1Ev                                                           
+000015e3  _ZN7m_queueC2Ev                                                           
+000015fb  _ZN7m_queueD1Ev                                                           
+000015fb  _ZN7m_queueD2Ev                                                           
+00001607  _ZN7m_queue7enqueueEP12msgcontainer                                       
+00001657  _ZN7m_queue9get_frontEv                                                   
+00001665  _ZN7m_queue6removeEP12msgcontainer                                        
+000016c3  _ZNK7m_queue5emptyEv                                                      
+000016d7  _ZN7m_queue5clearEv                                                       
+00001739  _ZN7u_queueC1Ei                                                           
+00001739  _ZN7u_queueC2Ei                                                           
+00001765  _ZN7u_queueD1Ev                                                           
+00001765  _ZN7u_queueD2Ev                                                           
+00001775  _ZN7u_queue7enqueueEc                                                     
+000017c1  _ZN7u_queue7dequeueEv                                                     
+00001801  _ZNK7u_queue5emptyEv                                                      
+00001815  minit                                                                     
+00001895  malloc                                                                    
+000018ff  free                                                                      
+000019c1  realloc                                                                   
+00001ac9  memalign                                                                  
+00001bb5  calloc                                                                    
+00001c57  __cxa_vec_new3                                                            
+00001c83  __cxa_vec_new2                                                            
+00001caf  __cxa_vec_new                                                             
+00001d4b  __cxa_vec_dtor                                                            
+00001d67  __cxa_vec_delete3                                                         
+00001d8d  __cxa_vec_delete2                                                         
+00001db3  __cxa_vec_delete                                                          
+00001dd9  __cxa_vec_ctor                                                            
+00001dfd  __cxa_vec_cleanup                                                         
+00001e1d  __cxa_vec_cctor                                                           
+00001e47  __aeabi_vec_new_nocookie                                                  
+00001e5b  __aeabi_vec_new_cookie_nodtor                                             
+00001e81  __aeabi_vec_new_cookie_noctor                                             
+00001e9d  __aeabi_vec_new_cookie                                                    
+00001eb1  __aeabi_vec_dtor                                                          
+00001ec5  __aeabi_vec_dtor_cookie                                                   
+00001ee3  __aeabi_vec_delete3_nodtor                                                
+00001efd  __aeabi_vec_delete3                                                       
+00001f19  __aeabi_vec_delete                                                        
+00001f25  __aeabi_vec_ctor_nocookie_nodtor                                          
+00001f37  __aeabi_vec_ctor_cookie_nodtor                                            
+00001f5b  __aeabi_vec_cctor_nocookie_nodtor                                         
+00001f81  main                                                                      
+00002077  __sti___8_main_cpp_8c25cdc9                                               
+000022e1  _Z17KTerminateProcessv                                                    
+000023b7  _Z7KGetPIDv                                                               
+000023bf  _Z5KBindj                                                                 
+00002419  _Z12KSendMessagejPvj                                                      
+000024c7  _Z15KReceiveMessagejPvj                                                   
+000026d9  __TI_cleanup                                                              
+00002705  freopen                                                                   
+0000272f  fopen                                                                     
+000027d5  fputs                                                                     
+000028e1  puts                                                                      
+00002909  SVCall                                                                    
+00002943  SVCHandler                                                                
+000029f5  _Z13TriggerPendSVv                                                        
+00002a01  PendSVHandler                                                             
+00002a1d  __cxa_finalize                                                            
+00002a5f  __cxa_ia64_exit                                                           
+00002a65  __cxa_atexit                                                              
+00002aa9  atexit                                                                    
+00002ab7  __aeabi_atexit                                                            
+00002b11  setvbuf                                                                   
+00002bed  _ZNSs9_M_appendEPKcS0_                                                    
+00002cb5  __TI_doflush                                                              
+00002d01  fflush                                                                    
+00002d7d  open                                                                      
+00002e39  __TI_wrt_ok                                                               
+00002e9b  __TI_rd_ok                                                                
+00002ee5  __aeabi_memcpy                                                            
+00002ee5  __aeabi_memcpy4                                                           
+00002ee5  __aeabi_memcpy8                                                           
+00002ee5  memcpy                                                                    
+00002f81  __TI_closefile                                                            
+00002fe7  fclose                                                                    
+00003019  _Z12SysTickStartv                                                         
+00003025  _Z11SysTickStopv                                                          
+00003031  _Z13SysTickPeriodm                                                        
+00003043  _Z16SysTickIntEnablev                                                     
+0000304f  _Z17SysTickIntDisablev                                                    
+0000305b  SysTickHandler                                                            
+0000306b  _Z6_Delayj                                                                
+000030a1  __aeabi_memclr                                                            
+000030a1  __aeabi_memclr4                                                           
+000030a1  __aeabi_memclr8                                                           
+000030a3  __aeabi_memset                                                            
+000030a3  __aeabi_memset4                                                           
+000030a3  __aeabi_memset8                                                           
+000030a9  memset                                                                    
+0000311b  __mpu_init                                                                
+0000311d  __TI_auto_init                                                            
+0000318d  finddevice                                                                
+000031b7  getdevice                                                                 
+000031fd  HOSTrename                                                                
+00003269  __TI_decompress_lzss                                                      
+000032d1  HOSTlseek                                                                 
+00003339  __TI_writemsg                                                             
+00003367  C$$IO$$                                                                   
+0000336b  __TI_readmsg                                                              
+000033a1  fseek                                                                     
+00003405  HOSTopen                                                                  
+00003465  _ZNSs20_M_compute_next_sizeEj                                             
+000034c1  close                                                                     
+0000351d  HOSTread                                                                  
+00003575  HOSTwrite                                                                 
+000035cd  _c_int00                                                                  
+00003621  C$$EXIT                                                                   
+00003625  abort                                                                     
+0000362d  exit                                                                      
+00003675  _ZNSt4priv12_String_baseIcSaIcEE17_M_allocate_blockEj                     
+000036c1  copy_in                                                                   
+0000370d  _ZNSaIcE11_M_allocateEjRj                                                 
+00003755  _ZSt28__stl_throw_invalid_argumentPKc                                     
+00003761  _ZSt26__stl_throw_overflow_errorPKc                                       
+0000376d  _ZSt25__stl_throw_runtime_errorPKc                                        
+00003779  _ZSt24__stl_throw_out_of_rangePKc                                         
+00003785  _ZSt24__stl_throw_length_errorPKc                                         
+00003791  _ZSt23__stl_throw_range_errorPKc                                          
+0000379d  _ZNSt4priv7__ucopyIPKcPciEET0_T_S5_S4_RKSt26random_access_iterator_tagPT1_
+000037e3  _ZNSt4priv7__ucopyIPcS1_iEET0_T_S3_S2_RKSt26random_access_iterator_tagPT1_
+00003829  HOSTclose                                                                 
+0000386d  HOSTunlink                                                                
+000038b1  _ZN10uartformatD1Ev                                                       
+000038ef  _ZNSs19_M_range_initializeEPKcS0_                                         
+0000392b  _ZNSsC1ERKSs                                                              
+00003965  strncpy                                                                   
+0000399b  _Z21__default_new_handlerv                                                
+0000399d  _Znaj                                                                     
+0000399d  _Znwj                                                                     
+000039cd  _ZNSt4priv15__ucopy_trivialEPKvS1_Pv                                      
+000039f9  remove                                                                    
+000039f9  unlink                                                                    
+00003a25  _ZNSt4priv12_String_baseIcSaIcEE19_M_deallocate_blockEv                   
+00003a4f  _system_post_cinit                                                        
+00003a51  lseek                                                                     
+00003a79  write                                                                     
+00003aa1  _ZNKSt4priv12_String_baseIcSaIcEE7_M_restEv                               
+00003ac7  _ZNSs2atEj                                                                
+00003aed  _ZNSsC1EPKcRKSaIcE                                                        
+00003b13  _ZNSt4priv12_String_baseIcSaIcEEC1ERKS1_j                                 
+00003b39  _ZNKSt4priv12_String_baseIcSaIcEE8max_sizeEv                              
+00003b5b  _ZNSt4priv12_String_baseIcSaIcEE8_M_resetEPcS3_S3_                        
+00003b7d  _ZNSs6appendERKSs                                                         
+00003b9d  _ZNSt4priv7__ucopyIPKcPcEET0_T_S5_S4_                                     
+00003bbd  _ZNSt4priv7__ucopyIPcS1_EET0_T_S3_S2_                                     
+00003bdd  _ZSt16_Param_ConstructIccEvPT_RKT0_                                       
+00003bfd  memchr                                                                    
+00003c1d  _ZSt3maxIjERKT_S2_S2_                                                     
+00003c3b  _ZSt3minIjERKT_S2_S2_                                                     
+00003c59  _ZNSt4priv12_String_baseIcSaIcEEC1ERKS1_                                  
+00003c75  _ZNSt4priv17_STLP_alloc_proxyIPccSaIcEE8allocateEjRj                      
+00003c91  _ZNSt4priv17_STLP_alloc_proxyIPccSaIcEE8allocateEjRjRKSt11__true_type     
+00003cad  _ZSt10_ConstructIcEvPT_                                                   
+00003cc9  _ZNSs6appendEPKc                                                          
+00003ce3  _ZNSsC1ERKSaIcE                                                           
+00003cfd  _ZNSt4priv17_STLP_alloc_proxyIPccSaIcEEC1ERKS2_S1_                        
+00003d17  _ZNKSt4priv12_String_baseIcSaIcEE19_M_using_static_bufEv                  
+00003d31  _args_main                                                                
+00003d49  strcmp                                                                    
+00003d61  _ZNKSs4sizeEv                                                             
+00003d77  _ZNSaIcE10deallocateEPcj                                                  
+00003d8d  _ZNSt4priv12_String_baseIcSaIcEED1Ev                                      
+00003da3  _ZSt20_Param_Construct_auxIccEvPT_RKT0_RKSt11__true_type                  
+00003db9  strchr                                                                    
+00003dcf  _ZNSs19_M_terminate_stringEv                                              
+00003de3  _ZNSt11char_traitsIcE6assignERcRKc                                        
+00003df7  _ZNSt4priv12_String_baseIcSaIcEEC2ERKS1_j                                 
+00003e0b  _ZSt18uninitialized_copyPKcS0_Pc                                          
+00003e21  _register_unlock                                                          
+00003e27  _register_lock                                                            
+00003e2f  _nop                                                                      
+00003e35  strcpy                                                                    
+00003e49  strlen                                                                    
+00003e5d  _ZNKSs13get_allocatorEv                                                   
+00003e6f  _ZSt14_Construct_auxIcEvPT_RKSt11__true_type                              
+00003e81  _ZNKSt4priv12_String_baseIcSaIcEE21_M_throw_length_errorEv                
+00003e91  _ZNKSt4priv12_String_baseIcSaIcEE21_M_throw_out_of_rangeEv                
+00003ea1  _ZNSaIcEC2ERKS_                                                           
+00003eb1  _ZNSt4priv12_String_baseIcSaIcEEC2ERKS1_                                  
+00003ec1  _Z10KernelInitv                                                           
+00003ed1  _ZNKSaIcE8max_sizeEv                                                      
+00003edf  _ZNKSs17_M_construct_nullEPc                                              
+00003eed  _ZNKSt4priv12_String_baseIcSaIcEE8_M_StartEv                              
+00003efb  _ZNKSt4priv12_String_baseIcSaIcEE9_M_FinishEv                             
+00003f09  _ZNSaIcEC1ERKS_                                                           
+00003f17  _ZNSsD1Ev                                                                 
+00003f25  _ZNSt11__new_alloc10deallocateEPvj                                        
+00003f33  _ZNSt4priv12_String_baseIcSaIcEE8_M_StartEv                               
+00003f41  _ZNSt4priv12_String_baseIcSaIcEE9_M_FinishEv                              
+00003f4f  _ZNSt4priv17_STLP_alloc_proxyIPccSaIcEED1Ev                               
+00003f5d  _ZSt7_Is_PODIcESt6_IsPODIT_EPS1_                                          
+00003f6b  __TI_decompress_none                                                      
+00003f79  _ZNKSs6lengthEv                                                           
+00003f85  _ZNKSs8max_sizeEv                                                         
+00003f91  _ZNSaIcEC1Ev                                                              
+00003f9d  _ZNSaIcED1Ev                                                              
+00003fa9  _ZNSaIcED2Ev                                                              
+00003fb5  _ZNSs3endEv                                                               
+00003fc1  _ZNSt11__new_alloc8allocateEj                                             
+00003fcd  _ZNSt11char_traitsIcE6lengthEPKc                                          
+00003fd9  _ZNSt4priv12_String_baseIcSaIcEED2Ev                                      
+00003fe5  _ZNSt6_IsPODIcE7_AnswerEv                                                 
+00003ff1  _ZSt12__stl_deletePv                                                      
+00003ffd  _ZSt9__stl_newj                                                           
+00004009  __TI_zero_init                                                            
+00004015  ResetISR                                                                  
+00004021  _ZdaPv                                                                    
+00004021  _ZdlPv                                                                    
+00004029  _system_pre_init                                                          
+0000402c  _ZZNSaIcE11_M_allocateEjRjEs                                              
+0000403b  _ZZNKSt4priv12_String_baseIcSaIcEE21_M_throw_length_errorEvEs             
+00004048  _ZZNKSt4priv12_String_baseIcSaIcEE21_M_throw_out_of_rangeEvEs             
+00004058  SHT$$INIT_ARRAY$$Base                                                     
+00004064  SHT$$INIT_ARRAY$$Limit                                                    
+000040dc  __TI_Handler_Table_Base                                                   
+000040e8  __TI_Handler_Table_Limit                                                  
+000040f0  __TI_CINIT_Base                                                           
+00004100  __TI_CINIT_Limit                                                          
+00010000  __SYSMEM_SIZE                                                             
+20000000  _sys_memory                                                               
+20010000  FormatTable                                                               
+20010738  __CIOBUF_                                                                 
+20010858  __TI_tmpnams                                                              
+200108f8  msgqueue                                                                  
+20010978  priorities                                                                
+200109f0  procqueue                                                                 
+20010a08  UART0_TX_BUFFER                                                           
+20010a1c  parmbuf                                                                   
+20010a24  GotData                                                                   
+20010a28  __dso_handle                                                              
+20010a2c  running                                                                   
+20010a30  Data                                                                      
+20010a34  __stack                                                                   
+20010c34  __STACK_TOP                                                               
+20010e34  __STACK_END                                                               
+20010e34  _ftable                                                                   
+20010f24  _device                                                                   
+20010f9c  _stream                                                                   
+20010fec  __TI_ft_end                                                               
+20010ff0  __aeabi_stdin                                                             
+20010ff4  __aeabi_stdout                                                            
+20010ff8  __aeabi_stderr                                                            
+20010ffc  highest_p                                                                 
+20011000  next_pid                                                                  
+20011004  ticks                                                                     
+20011008  force_psp                                                                 
+2001100c  __TI_cleanup_ptr                                                          
+20011010  __TI_dtors_ptr                                                            
+20011014  __TI_enable_exit_profile_output                                           
+20011024  _lock                                                                     
+20011028  _unlock                                                                   
+20011038  main_func_sp                                                              
+2001103c  _new_handler                                                              
+ffffffff  __TI_pprof_out_hndl                                                       
+ffffffff  __TI_prof_data_size                                                       
+ffffffff  __TI_prof_data_start                                                      
+ffffffff  __binit__                                                                 
+ffffffff  __c_args__                                                                
+ffffffff  binit                                                                     
+
+[315 symbols]

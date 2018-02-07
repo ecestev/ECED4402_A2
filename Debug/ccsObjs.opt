@@ -1,0 +1,1 @@
+"./KernelCalls.obj" "./kernel.obj" "./main.obj" "./process.obj" "./queues.obj" "./svc.obj" "./systick.obj" "./tm4c1294ncpdt_startup_ccs.obj" "./uart.obj" "../tm4c1294ncpdt.cmd" -llibc.a 
